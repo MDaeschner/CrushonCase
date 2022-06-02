@@ -1,0 +1,20 @@
+﻿@model UserModel
+
+<div class="text-center">
+    <h1 class="display-4">Nouveau vendeur :</h1>
+
+    @using (Html.BeginForm("AddPost", "User", FormMethod.Post))
+    {
+       <div>
+        @Html.DisplayNameFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+       </div>
+       
+       <div>
+        @Html.DisplayNameFor(model => model.Email)
+        @Html.EditorFor(model => model.Email)
+       </div>
+
+       <button class="btn btn-primary" type="submit">Ajouter</button>
+    }
+</div>

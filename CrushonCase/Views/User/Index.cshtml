@@ -1,0 +1,26 @@
+﻿@model IList<UserModel>
+
+<div class="text-center">
+    <h1 class="display-4">Liste des retailers : </h1>
+
+    <table>
+        <tr>
+            <td><b>Nom - Adresse mail:</b></td>
+        </tr>
+    
+    @foreach (var user in Model)
+    {
+        @if(user.Role == "VENDEUR")
+        {
+            <tr>
+                <td>
+                    @Html.Raw(user.Name + " - " + user.Email)
+                </td>
+            </tr>       
+        }
+    }
+    </table>
+
+    
+    <a class="btn btn-primary" asp-controller="Retailer" asp-action="Add">Ajouter</a>
+</div>

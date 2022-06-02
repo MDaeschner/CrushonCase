@@ -1,0 +1,23 @@
+﻿@model IList<BrandModel>
+
+<div class="text-center">
+    <h1 class="display-4">Liste des marques autorisées : </h1>
+
+    <table>
+        <tr>
+            <td><b>Nom :</b></td>
+        </tr>
+    
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>
+                @Html.Raw(user.Name)
+            </td>
+        </tr>
+    }
+    </table>
+
+    
+    <a class="btn btn-primary" asp-controller="Brand" asp-action="Add">Ajouter</a>
+</div>

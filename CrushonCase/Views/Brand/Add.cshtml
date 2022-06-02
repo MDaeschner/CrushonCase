@@ -1,0 +1,15 @@
+﻿@model BrandModel
+
+<div class="text-center">
+    <h1 class="display-4">Nouvelle marque :</h1>
+
+    @using (Html.BeginForm("AddPost", "Brand", FormMethod.Post))
+    {
+       <div>
+        @Html.DisplayNameFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+       </div>
+       
+       <button class="btn btn-primary" type="submit">Ajouter</button>
+    }
+</div>

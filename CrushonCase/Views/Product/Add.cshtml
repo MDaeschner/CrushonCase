@@ -1,0 +1,29 @@
+﻿@page
+@using Microsoft.AspNetCore.Http
+@model ProductModel
+
+<div class="text-left">
+    <h1 class="display-4">Nouvelle marque :</h1>
+
+    @using (Html.BeginForm("AddPost", "Product", FormMethod.Post))
+    {
+        @Html.Hidden("RetailerID", HttpContext.Session.GetInt32("UserID"))
+
+       <div>
+        @Html.DisplayNameFor(model => model.Title)
+        @Html.EditorFor(model => model.Title)
+       </div>
+       
+       <div>
+        @Html.DisplayNameFor(model => model.Price)
+        @Html.EditorFor(model => model.Price)
+       </div>
+
+       <div>
+        @Html.DisplayNameFor(model => model.Stock)
+        @Html.EditorFor(model => model.Stock)
+       </div>
+       
+       <button class="btn btn-primary" type="submit">Ajouter</button>
+    }
+</div>

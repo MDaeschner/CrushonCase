@@ -1,0 +1,23 @@
+﻿@model IList<ProductModel>
+
+<div class="text-center">
+    <h1 class="display-4">Liste des mes produits : </h1>
+
+    <table>
+        <tr>
+            <td><b>Nom produit : Prix : Stock</b></td>
+        </tr>
+    
+        @foreach (var product in Model)
+        {
+            
+            <tr>
+                <td>
+                    @Html.Raw(product.Title + " : " + product.Price.ToString("#.00 €") + " : " + product.Stock + " : " + (product.Enabled?"":"DISABLED")); 
+                </td>
+            </tr>
+        }
+    </table>
+
+    <a class="btn btn-primary" asp-controller="Product" asp-action="Add">Ajouter</a>
+</div>

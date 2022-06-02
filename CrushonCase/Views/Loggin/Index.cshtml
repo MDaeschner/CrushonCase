@@ -1,0 +1,15 @@
+﻿@model LogginModel
+
+<div class="text-center">
+    <h1 class="display-4">Identifiez-vous :</h1>
+
+    @using (Html.BeginForm("AddPost", "Loggin", FormMethod.Post))
+    {
+       <div>
+        @Html.DisplayNameFor(model => model.Email)
+        @Html.EditorFor(model => model.Email)
+       </div>
+       
+       <button class="btn btn-primary" type="submit">Valider</button>
+    }
+</div>
